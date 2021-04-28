@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { CameraComponent } from './camera/camera.component';
 import { NotificationComponent } from './notification/notification.component';
 import { GeolocationComponent } from './geolocation/geolocation.component';
+import { WebcamModule } from 'ngx-webcam';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    WebcamModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
