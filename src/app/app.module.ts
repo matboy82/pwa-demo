@@ -5,10 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import { CameraComponent } from './camera/camera.component';
+import { NotificationComponent } from './notification/notification.component';
+import { GeolocationComponent } from './geolocation/geolocation.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CameraComponent,
+    NotificationComponent,
+    GeolocationComponent
   ],
   imports: [
     BrowserModule,
