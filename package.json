@@ -1,5 +1,5 @@
 {
-  "name": "angular-pwa",
+  "name": "pwa-demo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/angular-pwa"
+    "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/pwa-demo",
+    "predeploy": "ng build --prod --base-href=/pwa-demo/",
+    "deploy": "npx gh-pages -d dist/pwa-demo"
   },
   "private": true,
   "dependencies": {
