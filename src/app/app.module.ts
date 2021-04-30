@@ -9,6 +9,7 @@ import { CameraComponent } from './camera/camera.component';
 import { NotificationComponent } from './notification/notification.component';
 import { GeolocationComponent } from './geolocation/geolocation.component';
 import { WebcamModule } from 'ngx-webcam';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,7 @@ import { WebcamModule } from 'ngx-webcam';
     GeolocationComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     WebcamModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -25,7 +26,8 @@ import { WebcamModule } from 'ngx-webcam';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
